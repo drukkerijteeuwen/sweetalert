@@ -37,11 +37,27 @@ var setParameters = function(params) {
    * Text
    */
 	if (params.html) {
-		if (params.text instanceof HTMLElement) {
+		console.log("a");
+		console.log(params.text instanceof HTMLElement);
+		console.log(typeof params.text);
+		
+		var html = params.text;
+		
+		if (typeof params.text == "object") 
+		{
+			html = params.text[0];
+		}
+		
+		
+		
+		console.log(html instanceof HTMLElement);
+		console.log(html);
+		
+		if (html instanceof HTMLElement) {
        		$text.innerHTML = '';
-			$text.appendChild(params.text);
+			$text.appendChild(html);
 		} else {
-			$text.innerHTML = params.text;
+			$text.innerHTML = html;
 		}
 	} else {
 		$text.innerHTML = escapeHtml(params.text || '').split('\n').join('<br>');
