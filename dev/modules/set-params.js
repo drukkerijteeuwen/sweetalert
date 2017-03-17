@@ -40,6 +40,7 @@ var setParameters = function(params) {
 		console.log("a");
 		console.log(params.text instanceof HTMLElement);
 		console.log(typeof params.text);
+		console.log(params);
 		
 		var html = params.text;
 		
